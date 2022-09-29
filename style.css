@@ -1,0 +1,196 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(to right, rgb(39, 40, 44), rgb(37, 38, 42));
+  color: rgb(252, 255, 255);
+  font-family: "Roboto";
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, rgb(52, 57, 61), rgb(34, 35, 40));
+  width: 720px;
+  border: 1px solid rgb(58, 61, 66);
+  border-bottom: none;
+  border-radius: 24px;
+}
+
+.card .card-header {
+  padding: 32px;
+  padding-bottom: 24px;
+}
+
+.card .card-header h2 {
+  font-size: 16px;
+
+  margin: 0;
+  margin-bottom: 32px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.card .card-header form {
+  display: flex;
+}
+
+.card .card-header input {
+  color: rgb(252, 255, 255);
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  background: #34393f;
+  border: 1px solid #383c43;
+  border-radius: 50px;
+  box-shadow: inset 5px 5px 9px #23272b, inset -5px -5px 9px #3d434a;
+}
+
+.card .card-header input:focus {
+  outline: none;
+  box-shadow: inset 5px 5px 9px #191b1d, inset -5px -5px 9px #464c53;
+}
+
+.card .card-header input::placeholder {
+  color: rgb(105, 108, 115);
+}
+
+.card .card-header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 32px;
+  height: 48px;
+  width: 48px;
+  margin-left: 16px;
+  background: linear-gradient(145deg, #383d43, #2f3339);
+  border: 1px solid #383c43;
+  border-radius: 50px;
+  box-shadow: 5px 5px 9px #191c20, -5px -5px 9px #444a52;
+  cursor: pointer;
+}
+
+.card .card-header button:active {
+  background: linear-gradient(145deg, #292d32, #3f444b);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-top: 1px solid rgb(64, 69, 75);
+  border-radius: 24px;
+  background: linear-gradient(to bottom, rgb(52, 57, 61), rgb(28, 29, 33));
+  box-shadow: 0px 0px 0px #000000, -0px -5px 9px #2e3237;
+}
+
+.card-body .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgb(58, 61, 66);
+}
+
+.card-body .task:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.card-body .task .description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Checkbox */
+.card-body .task .checkbox {
+  display: block;
+  position: relative;
+  padding-left: 44px;
+  margin-bottom: 24px;
+  margin-left: -12px;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-body .task .checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.card-body .task .checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: rgb(75, 77, 84);
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.card-body .task .checkbox:hover input ~ .checkmark {
+  background-color: rgb(94, 96, 105);
+}
+
+.card-body .task .checkbox input:checked ~ .checkmark {
+  background-color: #4b8eed;
+}
+
+.card-body .task .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.card-body .task .checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.card-body .task .checkbox .checkmark:after {
+  left: 8px;
+  top: 2px;
+  width: 8px;
+  height: 16px;
+  border: solid rgb(252, 255, 255);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.card-body .task .description span {
+  margin-left: 16px;
+  font-size: 18px;
+}
+
+.card-body .task a {
+  color: #f6476f;
+  font-size: 18px;
+}
